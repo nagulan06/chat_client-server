@@ -53,6 +53,10 @@ int main(int argc, char *argv[])
         // Send data
         printf("client: ");
         scanf(" %[^\n]", sendbuf);
+        if(strcmp(sendbuf, "exit") == 0)
+        {
+            exit(0);
+        }
         write(clientfd, sendbuf, sizeof(sendbuf));
         // Receive data
         printf("server: ");

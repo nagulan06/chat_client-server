@@ -72,6 +72,10 @@ int main()
         // Send data to client
         printf("server: ");
         scanf(" %[^\n]", sendbuf);
+        if(strcmp(sendbuf, "exit") == 0)
+        {
+            exit(0);
+        }
         write(connfd, sendbuf, sizeof(sendbuf)); 
 
         if(close(connfd) == -1)
